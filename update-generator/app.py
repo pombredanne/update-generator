@@ -13,6 +13,7 @@ import math
 import collections
 
 import gzip
+import codecs
 
 def train_markov_gutenberg_txt(fn):
     """ trains a Markov model on text data from Project Gutenberg """
