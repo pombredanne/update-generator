@@ -15,6 +15,8 @@ import collections
 import gzip
 import codecs
 
+import json
+
 def train_markov_gutenberg_txt(fn):
     """ trains a Markov model on text data from Project Gutenberg """
     with codecs.open(fn, "r", "cp1252") as f:
@@ -169,7 +171,7 @@ def main(args):
     while True:
         update = {"update_id" : "%020d" % update_id}
         update_id += 1
-        userid, text = ug.next()
+        userid, text = next(ug)
         update["userid"] = "%010d" % userid
         update["text"] = text
         
