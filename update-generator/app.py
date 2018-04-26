@@ -148,10 +148,6 @@ def main(args):
     logging.info('rate={}'.format(args.rate))
     logging.info('source={}'.format(args.source))
 
-    logging.info('downloading source')
-    dl = urllib.urlretrieve(args.source)
-    sourcefile = open(dl[0])
-
     logging.info('creating Markov chains')
     
     austen_model = train_markov_gutenberg_txt("austen.txt")
